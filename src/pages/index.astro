@@ -1,0 +1,471 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import portrait from "../assets/raiyan-portrait.png";
+
+const title = "Raiyan Rashid Prodhan | Senior Full Stack Developer";
+const description = "Senior Full Stack Developer in Dhaka with 5+ years building scalable Angular, Node.js, NestJS, Django and PostgreSQL products across Asia-Pacific and Africa.";
+
+const skills = [
+  { group: "Frontend", items: ["Angular", "TypeScript", "JavaScript ES6+", "RxJS", "Angular Material", "HTML5", "CSS3 / SCSS", "Bootstrap"] },
+  { group: "Backend", items: ["Node.js", "NestJS", "Django", "Express.js", "REST APIs", "Redis"] },
+  { group: "Data & architecture", items: ["PostgreSQL", "SQL", "Knex.js", "Schema design", "Query optimization", "Authentication", "State management"] },
+  { group: "Tools & delivery", items: ["Git & GitHub", "Docker", "Postman", "Firebase Hosting", "Hostinger", "GA4"] },
+];
+
+const experience = [
+  {
+    period: "Jun 2023 — Present",
+    company: "RIMES",
+    expansion: "Regional Integrated Multi-Hazard Early Warning System",
+    role: "Senior Full Stack Developer",
+    points: [
+      "Lead Angular development for climate and Agritech systems delivered across eight countries.",
+      "Upgraded applications from Angular 14 to 17, reducing build times by 30–60%.",
+      "Improved UI performance with lazy loading, caching and pragmatic state management.",
+      "Integrate weather REST APIs and lead code reviews with distributed international teams.",
+    ],
+  },
+  {
+    period: "Jun 2020 — May 2023",
+    company: "Intelletive Technologies Bangladesh",
+    expansion: "",
+    role: "Junior Software Engineer",
+    points: [
+      "Developed enterprise SaaS products with Angular, TypeScript, NestJS and PostgreSQL.",
+      "Built responsive dashboards and reusable interface systems backed by REST APIs.",
+      "Helped migrate a Restify backend to NestJS for stronger scalability and maintainability.",
+    ],
+  },
+];
+
+const projects = [
+  {
+    number: "01",
+    title: "Agricultural Decision Support Systems",
+    eyebrow: "Multi-country climate technology",
+    url: "https://bamis.rimes.int",
+    role: "Senior Full Stack Developer",
+    stack: ["Angular", "Angular Material", "Django", "PostgreSQL", "Redis"],
+    summary: "Reusable advisory systems serving farmers and decision-makers across eight countries, with multilingual weather, crop and pest intelligence.",
+    impact: "Reduced advisory generation from 60 seconds to under 400ms through Redis and asynchronous processing.",
+    tone: "sage",
+  },
+  {
+    number: "02",
+    title: "TekumoPRO",
+    eyebrow: "USA field-service SaaS",
+    url: "https://www.tekumo.com",
+    role: "Full Stack Developer",
+    stack: ["Angular", "Angular Material", "NestJS", "PostgreSQL"],
+    summary: "Production modules that streamline orders, dispatch and field operations with responsive, real-time operational dashboards.",
+    impact: "Optimized APIs and database queries, and automated invoices and operational email workflows.",
+    tone: "blue",
+  },
+  {
+    number: "03",
+    title: "Flood Forecasting & Warning Centre",
+    eyebrow: "Bangladesh disaster response",
+    url: "https://ffwc.gov.bd",
+    role: "Frontend Developer",
+    stack: ["Angular", "Leaflet", "Django", "PostgreSQL"],
+    summary: "A flash-flood forecasting module and interactive geospatial dashboards supporting national disaster preparedness and response.",
+    impact: "Optimized large-map rendering for faster, more usable flood-risk visualization.",
+    tone: "sand",
+  },
+  {
+    number: "04",
+    title: "Luminous Engineering",
+    eyebrow: "Singapore engineering company",
+    url: "https://luminousengineering.com.sg",
+    role: "Frontend Developer",
+    stack: ["HTML5", "SCSS", "JavaScript", "GA4", "Hostinger"],
+    summary: "A responsive multi-page corporate website built with clean semantic markup, measurable analytics and search-friendly foundations.",
+    impact: "Improved performance, implemented GA4 tracking and delivered a successful production deployment.",
+    tone: "clay",
+  },
+  {
+    number: "05",
+    title: "Synoit",
+    eyebrow: "Technology company platform",
+    url: "https://synoit.com",
+    role: "Frontend Developer",
+    stack: ["Angular", "TypeScript", "HTML5", "SCSS", "Firebase"],
+    summary: "A performance-focused company website with responsive landing pages, service journeys and reusable interface components.",
+    impact: "Designed, developed, optimized and deployed the complete web experience on Firebase Hosting.",
+    tone: "plum",
+  },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Raiyan Rashid Prodhan",
+  jobTitle: "Senior Full Stack Developer",
+  url: new URL(Astro.url.pathname, Astro.site).href,
+  image: new URL("/images/raiyan-rashid-prodhan.jpg", Astro.site).href,
+  email: "mailto:rrprodhan1998@gmail.com",
+  telephone: "+8801575579841",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "130/10/1C, Madartek-02",
+    addressLocality: "Dhaka",
+    postalCode: "1214",
+    addressCountry: "BD",
+  },
+  sameAs: ["https://github.com/rrprodhan", "https://www.linkedin.com/in/rrprodhan/"],
+  alumniOf: [
+    { "@type": "CollegeOrUniversity", name: "East West University" },
+    { "@type": "CollegeOrUniversity", name: "IBA, University of Dhaka" },
+  ],
+  knowsAbout: ["Angular", "TypeScript", "Node.js", "NestJS", "Django", "PostgreSQL", "SaaS architecture", "Web performance"],
+};
+---
+
+<BaseLayout {title} {description}>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <header class="site-header" data-header>
+    <div class="shell nav-wrap">
+      <a class="brand" href="#top" aria-label="Raiyan Rashid Prodhan, home">
+        <span class="brand-mark" aria-hidden="true">
+          <img src="/favicon.svg" alt="" width="24" height="24" />
+        </span>
+        <span class="brand-name">Raiyan Rashid Prodhan</span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle>
+        <span class="sr-only">Toggle navigation</span>
+        <span></span><span></span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Primary navigation" data-nav>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#work">Selected work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="nav-cta" href="/files/Raiyan_Rashid_Prodhan_Resume.pdf" download>
+        Resume <span aria-hidden="true">↘</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section id="top" class="hero section-shell" aria-labelledby="hero-heading">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span class="status-dot"></span> Available for impactful opportunities</p>
+        <h1 id="hero-heading">Engineering digital products that stay <em>fast, useful</em> and ready to scale.</h1>
+        <p class="hero-intro">I’m Raiyan, a senior full-stack developer turning complex climate, Agritech and SaaS challenges into dependable web products used across Asia-Pacific and Africa.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#work">Explore selected work <span aria-hidden="true">↘</span></a>
+          <a class="text-link" href="mailto:rrprodhan1998@gmail.com">rrprodhan1998@gmail.com <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal" data-delay="1">
+        <div class="portrait-frame">
+          <div class="portrait-accent" aria-hidden="true"></div>
+          <Image
+            src={portrait}
+            alt="Raiyan Rashid Prodhan wearing a navy blazer"
+            widths={[480, 720, 960]}
+            sizes="(max-width: 720px) 90vw, (max-width: 1100px) 42vw, 480px"
+            format="webp"
+            quality={88}
+            loading="eager"
+            fetchpriority="high"
+          />
+          <div class="portrait-label">
+            <span>Based in</span>
+            <strong>Dhaka, Bangladesh</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-metrics reveal" data-delay="2" aria-label="Career highlights">
+        <div><strong>5+</strong><span>years building<br />production software</span></div>
+        <div><strong>8</strong><span>countries reached<br />through my work</span></div>
+        <div><strong>&lt;400ms</strong><span>advisory generation<br />down from 60 sec</span></div>
+      </div>
+    </section>
+
+    <div class="capability-strip" aria-label="Core technologies">
+      <div class="strip-track">
+        <span>Angular</span><i>✦</i><span>TypeScript</span><i>✦</i><span>Node.js</span><i>✦</i><span>NestJS</span><i>✦</i><span>Django</span><i>✦</i><span>PostgreSQL</span><i>✦</i><span>Redis</span><i>✦</i><span>Docker</span>
+      </div>
+    </div>
+
+    <section id="about" class="about section-shell">
+      <div class="section-kicker reveal"><span>01</span> Profile</div>
+      <div class="about-grid">
+        <div class="section-heading reveal">
+          <p class="eyebrow">A product-minded engineering partner</p>
+          <h2>I build for the people using the product and the team maintaining it.</h2>
+        </div>
+        <div class="about-copy reveal" data-delay="1">
+          <p class="lead">With more than five years of experience, I design and develop scalable web applications, SaaS platforms and enterprise systems from interface architecture through API and database design.</p>
+          <p>My work combines careful engineering with practical product thinking: clear interfaces, resilient backends, efficient queries and code that distributed teams can confidently extend.</p>
+          <div class="principles">
+            <div><span>01</span><p><strong>Performance is a feature.</strong> Fast feedback and thoughtful loading strategies are part of the experience.</p></div>
+            <div><span>02</span><p><strong>Architecture should enable change.</strong> Modular systems keep growth sustainable.</p></div>
+            <div><span>03</span><p><strong>Clarity beats cleverness.</strong> Maintainable code makes teams and products move faster.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skills-grid reveal">
+        {skills.map((skill) => (
+          <article class="skill-card">
+            <h3>{skill.group}</h3>
+            <ul>
+              {skill.items.map((item) => <li>{item}</li>)}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section id="experience" class="experience section-shell">
+      <div class="section-kicker reveal"><span>02</span> Experience</div>
+      <div class="section-heading narrow reveal">
+        <p class="eyebrow">Five years of steady progression</p>
+        <h2>From reusable interfaces to international product leadership.</h2>
+      </div>
+
+      <div class="timeline">
+        {experience.map((job, index) => (
+          <article class="timeline-item reveal" data-delay={index === 1 ? "1" : undefined}>
+            <div class="timeline-marker"><span>{String(index + 1).padStart(2, "0")}</span></div>
+            <div class="timeline-meta">
+              <p>{job.period}</p>
+              <span>{index === 0 ? "Dhaka · International" : "Dhaka, Bangladesh"}</span>
+            </div>
+            <div class="timeline-body">
+              <p class="role">{job.role}</p>
+              <h3>{job.company}</h3>
+              {job.expansion && <p class="company-expansion">{job.expansion}</p>}
+              <ul>
+                {job.points.map((point) => <li>{point}</li>)}
+              </ul>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section id="work" class="work section-shell">
+      <div class="section-kicker reveal"><span>03</span> Selected work</div>
+      <div class="work-heading reveal">
+        <div class="section-heading narrow">
+          <p class="eyebrow">Systems with real-world reach</p>
+          <h2>Complex engineering, translated into measurable outcomes.</h2>
+        </div>
+        <p>Selected products spanning climate resilience, field operations, national forecasting and corporate platforms.</p>
+      </div>
+
+      <div class="projects-list">
+        {projects.map((project, index) => (
+          <article class:list={["project-card", "reveal", project.tone]} data-delay={String(index % 2)}>
+            <div class="project-top">
+              <span class="project-number">{project.number}</span>
+              <span class="project-eyebrow">{project.eyebrow}</span>
+              <a href={project.url} target="_blank" rel="noreferrer" aria-label={"Visit " + project.title}>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+            <div class="project-main">
+              <div>
+                <p class="project-role">{project.role}</p>
+                <h3>{project.title}</h3>
+              </div>
+              <p>{project.summary}</p>
+            </div>
+            <p class="project-impact"><span>Impact</span>{project.impact}</p>
+            <ul class="tag-list" aria-label="Technologies used">
+              {project.stack.map((tech) => <li>{tech}</li>)}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="credentials section-shell">
+      <div class="section-kicker reveal"><span>04</span> Learning & research</div>
+      <div class="credential-grid">
+        <article class="credential-card education reveal">
+          <p class="eyebrow">Education</p>
+          <div>
+            <span>2025</span>
+            <h3>Advanced Certificate for Management Professionals</h3>
+            <p>IBA, University of Dhaka</p>
+          </div>
+          <div>
+            <span>2020</span>
+            <h3>B.Sc. in Computer Science & Engineering</h3>
+            <p>East West University · CGPA 3.50 / 4.00</p>
+          </div>
+        </article>
+
+        <article class="credential-card publication reveal" data-delay="1">
+          <p class="eyebrow">Publication</p>
+          <span class="publication-year">IEEE CONIT · 2021</span>
+          <h3>Analyzing and Evaluating Boosting-Based CNN Algorithms for Image Classification</h3>
+          <a href="https://doi.org/10.1109/CONIT51480.2021.9498328" target="_blank" rel="noreferrer">
+            View publication <span aria-hidden="true">↗</span>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="section-shell contact-inner">
+        <div class="contact-copy reveal">
+          <div class="section-kicker light"><span>05</span> Start a conversation</div>
+          <p class="eyebrow">Have a meaningful problem to solve?</p>
+          <h2>Let’s build something that works beautifully and keeps working.</h2>
+          <p>I’m open to senior engineering roles, product collaborations and ambitious web platforms. Tell me what you’re working on.</p>
+          <div class="contact-details">
+            <a href="mailto:rrprodhan1998@gmail.com">rrprodhan1998@gmail.com <span>↗</span></a>
+            <a href="tel:+8801575579841">+880 1575-579841 <span>↗</span></a>
+            <p>130/10/1C, Madartek-02<br />Dhaka-1214, Bangladesh</p>
+          </div>
+          <div class="social-links">
+            <a href="https://github.com/rrprodhan" target="_blank" rel="noreferrer">GitHub ↗</a>
+            <a href="https://www.linkedin.com/in/rrprodhan/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+          </div>
+        </div>
+
+        <form class="contact-form reveal" data-delay="1" data-contact-form action="https://formsubmit.co/ajax/rrprodhan1998@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New portfolio enquiry" />
+          <input type="hidden" name="_template" value="table" />
+          <div class="honey-field" aria-hidden="true">
+            <label for="company-site">Company website</label>
+            <input id="company-site" type="text" name="_honey" tabindex="-1" autocomplete="off" />
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="name">Your name</label>
+              <input id="name" name="name" type="text" autocomplete="name" placeholder="Jane Smith" required />
+            </div>
+            <div class="field">
+              <label for="email">Email address</label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="jane@company.com" required />
+            </div>
+          </div>
+          <div class="field">
+            <label for="subject">What can I help with?</label>
+            <input id="subject" name="subject" type="text" placeholder="Senior role, product build, collaboration…" required />
+          </div>
+          <div class="field">
+            <label for="message">Tell me a little about it</label>
+            <textarea id="message" name="message" rows="5" placeholder="A quick overview, useful links, timeline or anything else I should know." required></textarea>
+          </div>
+          <div class="form-footer">
+            <button class="button button-light" type="submit">
+              <span data-button-label>Send message</span> <span aria-hidden="true">↗</span>
+            </button>
+            <p>Your details are only used to reply to this enquiry.</p>
+          </div>
+          <p class="form-status" role="status" aria-live="polite" data-form-status></p>
+          <a class="form-fallback" href="mailto:rrprodhan1998@gmail.com" data-form-fallback hidden>Send with your email app instead ↗</a>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="section-shell footer-inner">
+      <div class="brand footer-brand">
+        <span class="brand-mark">
+          <img src="/favicon.svg" alt="Raiyan Rashid Prodhan Logo" width="24" height="24" />
+        </span>
+        <span class="brand-name">
+          Raiyan Rashid Prodhan
+        </span>
+      </div>
+      <p>Senior Full Stack Developer · Dhaka, Bangladesh</p>
+      <p>© {new Date().getFullYear()} Raiyan Rashid Prodhan</p>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector("[data-menu-toggle]");
+    const navigation = document.querySelector("[data-nav]");
+
+    menuButton?.addEventListener("click", () => {
+      const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+      menuButton.setAttribute("aria-expanded", String(!isOpen));
+      navigation?.classList.toggle("is-open", !isOpen);
+      document.body.classList.toggle("menu-open", !isOpen);
+    });
+
+    navigation?.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        menuButton?.setAttribute("aria-expanded", "false");
+        navigation.classList.remove("is-open");
+        document.body.classList.remove("menu-open");
+      });
+    });
+
+    const header = document.querySelector("[data-header]");
+    const updateHeader = () => header?.classList.toggle("is-scrolled", window.scrollY > 16);
+    updateHeader();
+    window.addEventListener("scroll", updateHeader, { passive: true });
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
+
+    const contactForm = document.querySelector("[data-contact-form]");
+    const formStatus = document.querySelector("[data-form-status]");
+    const formFallback = document.querySelector("[data-form-fallback]");
+    const buttonLabel = document.querySelector("[data-button-label]");
+
+    contactForm?.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      if (!(contactForm instanceof HTMLFormElement)) return;
+
+      const submitButton = contactForm.querySelector("button[type='submit']");
+      if (submitButton instanceof HTMLButtonElement) submitButton.disabled = true;
+      if (buttonLabel) buttonLabel.textContent = "Sending…";
+      if (formStatus) {
+        formStatus.textContent = "Sending your message…";
+        formStatus.className = "form-status";
+      }
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: "POST",
+          headers: { Accept: "application/json" },
+          body: new FormData(contactForm),
+        });
+        const result = await response.json();
+        if (!response.ok || result.success === "false" || result.success === false) throw new Error("Submission failed");
+
+        contactForm.reset();
+        if (formStatus) {
+          formStatus.textContent = "Thanks — your message is on its way. I’ll get back to you soon.";
+          formStatus.className = "form-status success";
+        }
+      } catch {
+        if (formStatus) {
+          formStatus.textContent = "The form could not send just now. You can still reach me directly by email.";
+          formStatus.className = "form-status error";
+        }
+        if (formFallback instanceof HTMLElement) formFallback.hidden = false;
+      } finally {
+        if (submitButton instanceof HTMLButtonElement) submitButton.disabled = false;
+        if (buttonLabel) buttonLabel.textContent = "Send message";
+      }
+    });
+  </script>
+</BaseLayout>
