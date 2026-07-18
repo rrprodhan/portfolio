@@ -463,7 +463,7 @@ h2 em {
 }
 
 .capability-strip {
-  overflow: scroll;
+  overflow: auto;
   color: var(--white);
   background: var(--green);
 }
