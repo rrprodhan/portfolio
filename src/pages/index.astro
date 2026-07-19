@@ -392,22 +392,36 @@ const schema = {
   </footer>
 
   <script>
-    const menuButton = document.querySelector("[data-menu-toggle]");
-    const navigation = document.querySelector("[data-nav]");
+    const menuButton = document.querySelector<HTMLButtonElement>("[data-menu-toggle]");
+    const navigation = document.querySelector<HTMLElement>("[data-nav]");
+
+    const setMenuOpen = (isOpen: boolean) => {
+      menuButton?.setAttribute("aria-expanded", String(isOpen));
+      navigation?.classList.toggle("is-open", isOpen);
+      document.body.classList.toggle("menu-open", isOpen);
+    };
 
     menuButton?.addEventListener("click", () => {
       const isOpen = menuButton.getAttribute("aria-expanded") === "true";
-      menuButton.setAttribute("aria-expanded", String(!isOpen));
-      navigation?.classList.toggle("is-open", !isOpen);
-      document.body.classList.toggle("menu-open", !isOpen);
+      setMenuOpen(!isOpen);
     });
 
     navigation?.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
-        menuButton?.setAttribute("aria-expanded", "false");
-        navigation.classList.remove("is-open");
-        document.body.classList.remove("menu-open");
+        setMenuOpen(false);
       });
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && menuButton?.getAttribute("aria-expanded") === "true") {
+        setMenuOpen(false);
+        menuButton.focus();
+      }
+    });
+
+    const desktopQuery = window.matchMedia("(min-width: 821px)");
+    desktopQuery.addEventListener("change", ({ matches }) => {
+      if (matches) setMenuOpen(false);
     });
 
     const header = document.querySelector("[data-header]");
