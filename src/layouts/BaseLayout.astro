@@ -9,6 +9,7 @@ interface Props {
 const { title, description } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const socialImage = new URL("/images/raiyan-rashid-prodhan.jpg", Astro.site);
+const sitemapURL = new URL("sitemap-index.xml", Astro.site);
 ---
 
 <!doctype html>
@@ -22,6 +23,7 @@ const socialImage = new URL("/images/raiyan-rashid-prodhan.jpg", Astro.site);
     <meta name="theme-color" content="#f7f4ec" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="canonical" href={canonicalURL} />
+    <link rel="sitemap" type="application/xml" href={sitemapURL} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <meta property="og:type" content="website" />

@@ -22,8 +22,21 @@ npm run build
 Set `SITE_URL` to the final origin before building so canonical URLs, Open Graph metadata, `robots.txt` and the sitemap use the deployed domain:
 
 ```sh
-SITE_URL=https://your-domain.com npm run build
+SITE_URL=https://raiyanprodhan.com npm run build
 ```
+
+If `SITE_URL` is omitted, the production URL defaults to `https://raiyanprodhan.com`.
+
+## Sitemap maintenance
+
+The `@astrojs/sitemap` integration generates `sitemap-index.xml` and its child
+sitemap files during every production build. New static routes under `src/pages`
+are included automatically. Dynamic routes are included when they are generated
+with Astro's `getStaticPaths()`.
+
+Do not add `changefreq`, `priority` or `lastmod` globally unless the values are
+accurate. If a future page is marked `noindex` or is only a utility route, also
+add its pathname to `sitemapExcludedPaths` in `astro.config.mjs`.
 
 ## Contact form activation
 
