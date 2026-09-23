@@ -1,7 +1,8 @@
 ---
 import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import portrait from "../assets/raiyan-portrait.png";
+import { profileImageAlt, profileImagePath } from "../lib/profile";
+import portrait from "../../public/images/raiyan-rashid-prodhan.png";
 
 const title = "Raiyan Rashid Prodhan | Senior Software Engineer";
 const description = "Senior Software Engineer in Dhaka with 5+ years architecting Angular, React, NestJS and Django products for SaaS, GIS and decision support systems across Asia-Pacific and Africa.";
@@ -123,7 +124,7 @@ const schema = {
   name: "Raiyan Rashid Prodhan",
   jobTitle: "Senior Software Engineer",
   url: new URL(Astro.url.pathname, Astro.site).href,
-  image: new URL("/images/raiyan-rashid-prodhan.jpg", Astro.site).href,
+  image: new URL(profileImagePath, Astro.site).href,
   email: "mailto:rrprodhan1998@gmail.com",
   telephone: "+8801575579841",
   address: {
@@ -188,7 +189,7 @@ const schema = {
           <div class="portrait-accent" aria-hidden="true"></div>
           <Image
             src={portrait}
-            alt="Raiyan Rashid Prodhan wearing a navy blazer"
+            alt={profileImageAlt}
             widths={[480, 720, 960]}
             sizes="(max-width: 720px) 90vw, (max-width: 1100px) 42vw, 480px"
             format="webp"
